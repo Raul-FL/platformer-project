@@ -1,0 +1,512 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/actors/enemies/state_machine_enemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/enemies/dulhahan/rycuda.sprites/Sprite-0057_01.tres" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/enemies/dulhahan/rycuda.sprites/Sprite-0057_02.tres" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/enemies/dulhahan/rycuda.sprites/Sprite-0057_03.tres" type="Texture" id=4]
+[ext_resource path="res://src/actors/enemies/Dulhahan/dulhahan_params.gd" type="Script" id=5]
+[ext_resource path="res://assets/objects/actors/character/pass_through.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/objects/actors/character/CharacterStats.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/objects/actors/enemies/Dulhahan/states.tscn" type="PackedScene" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "attack" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -16, 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../hitbox/CollisionPolygon2D:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 5, -15, -59, -15, -59, -7, -9, -7, -9, 23, 5, 23 ), PoolVector2Array( 7, -19, -10, -19, -12, 23, 19, 23 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "attack_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "attack" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 19, 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../hitbox/CollisionPolygon2D:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 8, -17, -5, -15, -17, 23, 12, 23, 16, -10, 63, -10, 63, -16 ), PoolVector2Array( 7, -19, -6, -19, -17, 23, 13, 23 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../hitbox/CollisionPolygon2D:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 7, -19, -10, -19, -12, 23, 19, 23 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../hitbox/CollisionPolygon2D:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 7, -19, -6, -19, -17, 23, 13, 23 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "walk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "walk" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 3, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../hitbox/CollisionPolygon2D:polygon")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 7, -19, -10, -19, -12, 23, 19, 23 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "walk" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( -2, -1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../hitbox/CollisionPolygon2D:polygon")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 7, -19, -10, -19, -12, 23, 19, 23 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 63, 18 )
+
+[node name="Dulhahan" type="KinematicBody2D" groups=[
+"enemy",
+]]
+collision_layer = 0
+collision_mask = 7
+collision/safe_margin = 0.01
+script = ExtResource( 1 )
+START_STATE = NodePath("states/idle")
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -16, 3 )
+frames = SubResource( 1 )
+animation = "attack"
+
+[node name="player_animations" type="AnimationPlayer" parent="AnimatedSprite"]
+anims/attack = SubResource( 2 )
+anims/attack_left = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/idle_left = SubResource( 5 )
+anims/walk = SubResource( 6 )
+anims/walk_left = SubResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 5, -22, -5, -22, -5, 23, 5, 23 )
+
+[node name="dash_timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="air_dash_timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="slide_timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="dash_delay_timer" type="Timer" parent="."]
+
+[node name="CharacterParams" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="check_ground_left" type="RayCast2D" parent="."]
+position = Vector2( -4.5, 21 )
+scale = Vector2( 0.33939, 0.529653 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 7
+
+[node name="check_ground_right" type="RayCast2D" parent="."]
+position = Vector2( 4.5, 21 )
+scale = Vector2( 0.33939, 0.529653 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 7
+
+[node name="check_ceiling_left" type="RayCast2D" parent="."]
+position = Vector2( -4.5, -22 )
+scale = Vector2( 0.33939, 0.529653 )
+enabled = true
+cast_to = Vector2( 0, -2 )
+collision_mask = 5
+
+[node name="check_ceiling_right" type="RayCast2D" parent="."]
+position = Vector2( 4.5, -22 )
+scale = Vector2( 0.33939, 0.529653 )
+enabled = true
+cast_to = Vector2( 0, -2 )
+collision_mask = 5
+
+[node name="check_wall_uright" type="RayCast2D" parent="."]
+position = Vector2( 4, -21 )
+scale = Vector2( 0.339, 0.3 )
+enabled = true
+cast_to = Vector2( 3, 0 )
+
+[node name="check_wall_uleft" type="RayCast2D" parent="."]
+position = Vector2( -4, -21 )
+scale = Vector2( 0.339, 0.3 )
+enabled = true
+cast_to = Vector2( -3, 0 )
+
+[node name="check_wall_muright" type="RayCast2D" parent="."]
+position = Vector2( 4, -11 )
+scale = Vector2( 0.339, 0.3 )
+enabled = true
+cast_to = Vector2( 3, 0 )
+
+[node name="check_wall_muleft" type="RayCast2D" parent="."]
+position = Vector2( -4, -11 )
+scale = Vector2( 0.339, 0.3 )
+enabled = true
+cast_to = Vector2( -3, 0 )
+
+[node name="check_wall_mdright" type="RayCast2D" parent="."]
+position = Vector2( 4, 4 )
+scale = Vector2( 0.339, 0.3 )
+enabled = true
+cast_to = Vector2( 3, 0 )
+
+[node name="check_wall_dright" type="RayCast2D" parent="."]
+visible = false
+position = Vector2( 5, 12 )
+scale = Vector2( 0.339, 0.3 )
+cast_to = Vector2( 3, 0 )
+
+[node name="check_wall_mdleft" type="RayCast2D" parent="."]
+position = Vector2( -4, 4 )
+scale = Vector2( 0.339, 0.3 )
+enabled = true
+cast_to = Vector2( -3, 0 )
+
+[node name="check_wall_dleft" type="RayCast2D" parent="."]
+visible = false
+position = Vector2( -4, 12 )
+scale = Vector2( 0.339, 0.3 )
+cast_to = Vector2( -3, 0 )
+
+[node name="pass_through" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionPolygon2D" parent="pass_through" index="0"]
+position = Vector2( 0, 22 )
+
+[node name="walk_timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CharacterStats" parent="." instance=ExtResource( 7 )]
+hp = 4
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
+polygon = PoolVector2Array( 5, -15, -59, -15, -59, -7, -9, -7, -9, 23, 5, 23 )
+
+[node name="hurt_timer" type="Timer" parent="."]
+wait_time = 1.489
+
+[node name="states" parent="." instance=ExtResource( 8 )]
+
+[node name="alarm_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alarm_area"]
+shape = SubResource( 8 )
+[connection signal="timeout" from="walk_timer" to="CharacterParams" method="_on_walk_timer_timeout"]
+[connection signal="timeout" from="hurt_timer" to="CharacterStats" method="_on_hurt_timer_timeout"]
+[connection signal="body_entered" from="alarm_area" to="CharacterParams" method="_on_alarm_area_body_entered"]
+
+[editable path="pass_through"]
+
+[editable path="states"]

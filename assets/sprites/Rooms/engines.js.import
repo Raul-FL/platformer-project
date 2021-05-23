@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/engines.js-e612263ffe472f1f6f4d05cc707e99d3.res"
+
+[deps]
+
+files=[ "res://Sprites/Rooms/engines.sprites/engines1.tres", "res://Sprites/Rooms/engines.sprites/engines2.tres", "res://Sprites/Rooms/engines.sprites/engines3.tres" ]
+
+source_file="res://Sprites/Rooms/engines.js"
+dest_files=[ "res://.import/engines.js-e612263ffe472f1f6f4d05cc707e99d3.res", "res://Sprites/Rooms/engines.sprites/engines1.tres", "res://Sprites/Rooms/engines.sprites/engines2.tres", "res://Sprites/Rooms/engines.sprites/engines3.tres" ]
+
+[params]
+

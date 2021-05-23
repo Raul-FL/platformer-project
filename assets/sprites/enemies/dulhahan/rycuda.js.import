@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/rycuda.js-3ab1785a10eb3d0635beb0dac136f1d8.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/dulhahan/rycuda.sprites/Sprite-0057_01.tres", "res://Sprites/enemies/dulhahan/rycuda.sprites/Sprite-0057_02.tres", "res://Sprites/enemies/dulhahan/rycuda.sprites/Sprite-0057_03.tres" ]
+
+source_file="res://Sprites/enemies/dulhahan/rycuda.js"
+dest_files=[ "res://.import/rycuda.js-3ab1785a10eb3d0635beb0dac136f1d8.res", "res://Sprites/enemies/dulhahan/rycuda.sprites/Sprite-0057_01.tres", "res://Sprites/enemies/dulhahan/rycuda.sprites/Sprite-0057_02.tres", "res://Sprites/enemies/dulhahan/rycuda.sprites/Sprite-0057_03.tres" ]
+
+[params]
+

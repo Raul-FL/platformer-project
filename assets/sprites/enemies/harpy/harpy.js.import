@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/harpy.js-cb7dca3749c0f58752fd873da827f9e5.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_01.tres", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_02.tres", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_03.tres", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_04.tres", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_05.tres", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_06.tres" ]
+
+source_file="res://Sprites/enemies/harpy/harpy.js"
+dest_files=[ "res://.import/harpy.js-cb7dca3749c0f58752fd873da827f9e5.res", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_01.tres", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_02.tres", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_03.tres", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_04.tres", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_05.tres", "res://Sprites/enemies/harpy/harpy.sprites/Sprite-0123_06.tres" ]
+
+[params]
+

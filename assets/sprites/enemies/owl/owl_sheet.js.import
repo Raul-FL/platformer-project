@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/owl_sheet.js-b6a0e6f39ce526e4fe5a14ea1cc8d9cb.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/owl/owl_sheet.sprites/owl_01.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_02.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_03.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_04.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_05.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_06.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_07.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_08.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_09.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_10.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_11.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_12.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_13.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_14.tres" ]
+
+source_file="res://Sprites/enemies/owl/owl_sheet.js"
+dest_files=[ "res://.import/owl_sheet.js-b6a0e6f39ce526e4fe5a14ea1cc8d9cb.res", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_01.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_02.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_03.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_04.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_05.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_06.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_07.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_08.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_09.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_10.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_11.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_12.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_13.tres", "res://Sprites/enemies/owl/owl_sheet.sprites/owl_14.tres" ]
+
+[params]
+

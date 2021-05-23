@@ -1,0 +1,1 @@
+hypogriff_01.png.png 3 2, hypogriff_02.png.png 50 14, hypogriff_03.png.png 91 26.

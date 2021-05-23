@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/stages/zerou.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/Rooms/boss_room.png" type="Texture" id=4]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/HUD/HUD.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 221, 10 )
+
+[node name="test_room_boss" type="Node2D"]
+
+[node name="Area2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( -14, 118 )
+target_stage = "res://assets/stages/serious/test_dash.tscn"
+warp_point = 0
+spectrum = -71
+
+[node name="Area2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 462, 115 )
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = 16.0
+margin_right = 443.0
+margin_bottom = 240.0
+texture = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 443.0
+margin_bottom = 16.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 221, 210 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 221, 6 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 20, 172 )
+
+[node name="Camera2D" parent="Player" index="7"]
+limit_right = 442
+limit_bottom = 230
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 6 )]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_entered"]
+
+[editable path="Player"]

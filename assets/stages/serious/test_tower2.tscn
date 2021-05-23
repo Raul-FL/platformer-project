@@ -1,0 +1,206 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://src/stages/Room.gd" type="Script" id=1]
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprites/Rooms/tower2.png" type="Texture" id=3]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/Rooms/engines.sprites/engines1.tres" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/Rooms/engines.sprites/engines2.tres" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/Rooms/engines.sprites/engines3.tres" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Rooms/big_engine.png" type="Texture" id=8]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/circle_vertical_platform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/horizontal_circle_platform.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/objects/scenario_utils/Sign.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/objects/scenario_elements/torch3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/HUD/HUD.tscn" type="PackedScene" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "rotate_left"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -360.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "rotate_right"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "rotate_left"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -360.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "rotate_right"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[node name="test_tower2" type="Node2D"]
+script = ExtResource( 1 )
+bound_right = 256
+bound_bottom = 700
+
+[node name="Area2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( -14, 623 )
+target_stage = "res://assets/stages/serious/test_tower1.tscn"
+warp_point = 0
+spectrum = -512
+
+[node name="Area2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 277, 109 )
+target_stage = "res://assets/stages/serious/test_tower3.tscn"
+spectrum = 769
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 648, 32, 648, 32, 696, 49, 696, 97, 648, 192, 648, 192, 696, 240, 696, 240, 264, 225, 264, 225, 136, 256, 136, 256, 719, 0, 719 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 0, 584, 16, 584, 16, 520, 47, 520, 47, 296, 64, 296, 64, 280, 32, 280, 32, 88, 48, 88, 48, 72, 64, 72, 64, 56, 80, 56, 80, 40, 96, 40, 96, 24, 242, 24, 242, 72, 256, 72, 256, 0, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 19, 613 )
+
+[node name="Camera2D" parent="Player" index="8"]
+limit_right = 256
+limit_bottom = 700
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 1, 0.5 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 0, 128 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+frames = SubResource( 1 )
+frame = 1
+playing = true
+centered = false
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 143, 377 )
+texture = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+autoplay = "rotate_right"
+anims/rotate_left = SubResource( 2 )
+anims/rotate_right = SubResource( 3 )
+
+[node name="circle_vertical_platform" parent="Sprite" instance=ExtResource( 9 )]
+visible = false
+scale = Vector2( 1.69529, 1.69529 )
+active_hspeed = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 94, 206 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2"]
+autoplay = "rotate_left"
+anims/rotate_left = SubResource( 4 )
+anims/rotate_right = SubResource( 5 )
+
+[node name="circle_vertical_platform" parent="Sprite2" instance=ExtResource( 9 )]
+visible = false
+scale = Vector2( 1.69529, 1.69529 )
+direction = -1
+active_hspeed = true
+
+[node name="AnimatedSprite" parent="." instance=ExtResource( 10 )]
+
+[node name="flying_platform" parent="AnimatedSprite" index="0"]
+active_hspeed = true
+
+[node name="Sign" parent="." instance=ExtResource( 11 )]
+position = Vector2( 121, 632 )
+
+[node name="Label" parent="Sign/CanvasLayer" index="0"]
+visible = false
+margin_left = 40.0
+margin_right = 240.0
+text = "Pressione ^ e Espaco para
+efetuar um super pulo "
+
+[node name="torch3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 180, 633 )
+
+[node name="torch4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 40, 265 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 13 )]
+[connection signal="body_entered" from="Sign" to="Sign" method="_on_Sign_body_entered"]
+[connection signal="body_exited" from="Sign" to="Sign" method="_on_Sign_body_exited"]
+
+[editable path="Player"]
+
+[editable path="AnimatedSprite"]
+
+[editable path="AnimatedSprite/flying_platform"]
+
+[editable path="Sign"]

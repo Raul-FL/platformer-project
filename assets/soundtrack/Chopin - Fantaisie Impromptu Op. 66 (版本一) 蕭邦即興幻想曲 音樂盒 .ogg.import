@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Chopin - Fantaisie Impromptu Op. 66 (版本一) 蕭邦即興幻想曲 音樂盒 .ogg-a184c3d2894093208e26fd3959e2929b.oggstr"
+
+[deps]
+
+source_file="res://assets/soundtrack/Chopin - Fantaisie Impromptu Op. 66 (版本一) 蕭邦即興幻想曲 音樂盒 .ogg"
+dest_files=[ "res://.import/Chopin - Fantaisie Impromptu Op. 66 (版本一) 蕭邦即興幻想曲 音樂盒 .ogg-a184c3d2894093208e26fd3959e2929b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

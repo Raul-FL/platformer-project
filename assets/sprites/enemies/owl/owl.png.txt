@@ -1,0 +1,1 @@
+owl_01.png.png 1 37, owl_02.png.png 31 36, owl_03.png.png 58 46, owl_04.png.png 1 37, owl_05.png.png 31 36, owl_06.png.png 58 46, owl_07.png.png 1 37, owl_08.png.png 31 36, owl_09.png.png 58 46, owl_10.png.png 1 37, owl_11.png.png 31 36, owl_12.png.png 58 46, owl_13.png.png 92 49, owl_14.png.png 115 44.

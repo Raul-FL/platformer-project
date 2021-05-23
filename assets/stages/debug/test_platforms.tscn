@@ -1,0 +1,146 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/stages/Room.gd" type="Script" id=1]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/flying_moving_platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/circle_vertical_platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "left_to_right"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4.5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 176, 193 ), Vector2( 176, 193 ), Vector2( 396, 193 ), Vector2( 396, 193 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "bottom_to_up"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4.5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 528, 200 ), Vector2( 528, 200 ), Vector2( 528, 58 ), Vector2( 528, 58 ) ]
+}
+
+[node name="test_platforms" type="Node"]
+script = ExtResource( 1 )
+bound_right = 590
+bound_bottom = 240
+
+[node name="flying_platform2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 176, 193 )
+
+[node name="AnimationPlayer" parent="flying_platform2" index="2"]
+autoplay = "left_to_right"
+anims/left_to_right = SubResource( 1 )
+
+[node name="flying_platform3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 528, 200 )
+
+[node name="AnimationPlayer" parent="flying_platform3" index="2"]
+autoplay = "bottom_to_up"
+anims/bottom_to_up = SubResource( 2 )
+
+[node name="Area2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( -9, 143 )
+target_stage = "res://Rooms/test_room1.tscn"
+warp_point = 0
+
+[node name="Area2D3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 244, 259 )
+scale = Vector2( -27.7168, 0.0428804 )
+target_stage = "res://Rooms/test_platforms.tscn"
+
+[node name="Area2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -12, 115 )
+target_stage = "res://Rooms/test_slopes.tscn"
+
+[node name="CollisionShape2D" parent="Area2D2" index="0"]
+position = Vector2( 623, -75 )
+scale = Vector2( 1.01796, 0.28 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 216, 0, 240, 59, 240, 59, 216 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 216, 0, 240, 59, 240, 59, 216 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 432, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 216, 0, 240, 59, 240, 59, 216 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 0, 216, 0, 240, 59, 240, 59, 216 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( -6.00001, -187 )
+scale = Vector2( 10.6134, 0.77385 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D4"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 216, 0, 240, 59, 240, 59, 216 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+polygon = PoolVector2Array( 0, 216, 0, 240, 59, 240, 59, 216 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 539, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D3"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 39, 51, 39, 240, 59, 240, 58, 51 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+polygon = PoolVector2Array( 39, 51, 39, 240, 59, 240, 58, 51 )
+
+[node name="circle_vertical_platform" parent="." instance=ExtResource( 4 )]
+position = Vector2( 100, 193 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 168.228, 159.592 )
+
+[editable path="flying_platform2"]
+
+[editable path="flying_platform3"]
+
+[editable path="Area2D2"]
+
+[editable path="Player"]
+
+[editable path="Player/states"]

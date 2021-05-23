@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/hearts_sheet.js-293d527b84ca32de1b18328081b45a45.res"
+
+[deps]
+
+files=[ "res://Sprites/enviroment/hearts_sheet.sprites/hearts_01.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_02.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_03.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_04.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_05.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_06.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_07.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_08.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_09.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_10.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_11.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_12.tres" ]
+
+source_file="res://Sprites/enviroment/hearts_sheet.js"
+dest_files=[ "res://.import/hearts_sheet.js-293d527b84ca32de1b18328081b45a45.res", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_01.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_02.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_03.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_04.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_05.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_06.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_07.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_08.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_09.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_10.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_11.tres", "res://Sprites/enviroment/hearts_sheet.sprites/hearts_12.tres" ]
+
+[params]
+

@@ -1,0 +1,1 @@
+gaibon2_01.png.png 6 104, gaibon2_02.png.png 87 103, gaibon2_03.png.png 137 103, gaibon2_04.png.png 235 104, gaibon2_05.png.png 285 107, gaibon2_06.png.png 366 107, gaibon2_07.png.png 464 107, gaibon2_08.png.png 529 107, gaibon2_09.png.png 148 215, gaibon2_10.png.png 162 215, gaibon2_11.png.png 175 213.

@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/joker.js-097de722d44c572c6f9dd87bd8f7e434.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_01.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_02.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_03.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_04.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_05.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_06.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_07.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_08.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_09.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_10.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_11.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_12.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_13.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_14.tres" ]
+
+source_file="res://Sprites/enemies/joker/joker.js"
+dest_files=[ "res://.import/joker.js-097de722d44c572c6f9dd87bd8f7e434.res", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_01.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_02.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_03.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_04.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_05.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_06.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_07.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_08.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_09.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_10.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_11.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_12.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_13.tres", "res://Sprites/enemies/joker/joker.sprites/Sprite-0055_14.tres" ]
+
+[params]
+

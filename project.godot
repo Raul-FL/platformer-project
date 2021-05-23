@@ -1,0 +1,116 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "CharacterParams",
+"language": "GDScript",
+"path": "res://src/actors/character/CharacterParams.gd"
+}, {
+"base": "Node",
+"class": "EnemyStats",
+"language": "GDScript",
+"path": "res://src/actors/character/CharacterStats.gd"
+}, {
+"base": "Node",
+"class": "InAir",
+"language": "GDScript",
+"path": "res://src/actors/character/character_states/in_air.gd"
+}, {
+"base": "Node",
+"class": "Motion",
+"language": "GDScript",
+"path": "res://src/actors/character/character_states/motion.gd"
+}, {
+"base": "Node",
+"class": "OnGround",
+"language": "GDScript",
+"path": "res://src/actors/character/character_states/on_ground.gd"
+}, {
+"base": "Node",
+"class": "PlayerParams",
+"language": "GDScript",
+"path": "res://src/actors/player/PlayerParams.gd"
+}, {
+"base": "Node",
+"class": "StateMachineKinematicPLayer",
+"language": "GDScript",
+"path": "res://src/actors/player/state_machine.gd"
+} ]
+_global_script_class_icons={
+"CharacterParams": "",
+"EnemyStats": "",
+"InAir": "",
+"Motion": "",
+"OnGround": "",
+"PlayerParams": "",
+"StateMachineKinematicPLayer": ""
+}
+
+[application]
+
+config/name="platformer-project"
+run/main_scene="res://assets/screens/TitleScreen.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://src/globals/Globals.gd"
+PlayerGlobals="*res://src/actors/player/PlayerGlobals.gd"
+stage_music="*res://assets/soundtrack/stage_music.tscn"
+
+[display]
+
+window/size/width=256
+window/size/height=207
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[input]
+
+run={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
+ ]
+}
+attack={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+ ]
+}
+sub_weapon={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":88,"unicode":0,"echo":false,"script":null)
+ ]
+}
+fly={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
+escape={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
+ ]
+}
+subweapon_axe={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":67,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/2d/use_pixel_snap=true
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.0627451, 0.0627451, 0.156863, 1 )
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/ghost.js-2f8412ef0f1f4227ad077d84543a9857.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/ghost/ghost.sprites/ghost0.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost1.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost10.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost11.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost12.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost13.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost14.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost15.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost2.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost3.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost4.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost5.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost6.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost7.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost8.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost9.tres" ]
+
+source_file="res://Sprites/enemies/ghost/ghost.js"
+dest_files=[ "res://.import/ghost.js-2f8412ef0f1f4227ad077d84543a9857.res", "res://Sprites/enemies/ghost/ghost.sprites/ghost0.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost1.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost10.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost11.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost12.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost13.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost14.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost15.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost2.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost3.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost4.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost5.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost6.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost7.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost8.tres", "res://Sprites/enemies/ghost/ghost.sprites/ghost9.tres" ]
+
+[params]
+

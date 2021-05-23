@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/owl.js-78cf912a0ea5758238a8b7dd2465f0ee.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/moth/owl.sprites/Sprite-0113_01.tres", "res://Sprites/enemies/moth/owl.sprites/Sprite-0113_02.tres", "res://Sprites/enemies/moth/owl.sprites/Sprite-0113_03.tres" ]
+
+source_file="res://Sprites/enemies/moth/owl.js"
+dest_files=[ "res://.import/owl.js-78cf912a0ea5758238a8b7dd2465f0ee.res", "res://Sprites/enemies/moth/owl.sprites/Sprite-0113_01.tres", "res://Sprites/enemies/moth/owl.sprites/Sprite-0113_02.tres", "res://Sprites/enemies/moth/owl.sprites/Sprite-0113_03.tres" ]
+
+[params]
+

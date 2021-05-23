@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/big_engine.js-8db1168642dca9da4e1ce545342f118d.res"
+
+[deps]
+
+files=[ "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_01.tres", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_02.tres", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_03.tres", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_04.tres", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_05.tres", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_06.tres" ]
+
+source_file="res://Sprites/enviroment/big_engine.js"
+dest_files=[ "res://.import/big_engine.js-8db1168642dca9da4e1ce545342f118d.res", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_01.tres", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_02.tres", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_03.tres", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_04.tres", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_05.tres", "res://Sprites/enviroment/big_engine.sprites/tower_big_engine_06.tres" ]
+
+[params]
+

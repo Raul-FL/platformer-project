@@ -1,0 +1,138 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/sprites/Rooms/tower3.png" type="Texture" id=2]
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sprites/Rooms/engines.sprites/engines1.tres" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/Rooms/engines.sprites/engines2.tres" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/Rooms/engines.sprites/engines3.tres" type="Texture" id=6]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/flying_moving_platform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/enviroment/horizontal_moving_platform.png" type="Texture" id=9]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/flying_platform.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/horizontal_circle_platform.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/objects/scenario_elements/torch3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/HUD/HUD.tscn" type="PackedScene" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "a"
+length = 60.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5.8, 29, 32 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 90, 654 ), Vector2( 90, 654 ), Vector2( 90, 206 ), Vector2( 90, 206 ) ]
+}
+
+[node name="test_tower3" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 904, 32, 904, 32, 952, 161, 952, 209, 904, 224, 904, 224, 840, 128, 840, 128, 792, 112, 792, 112, 808, 97, 808, 97, 776, 113, 760, 176, 760, 176, 825, 224, 825, 224, 152, 209, 152, 209, 136, 256, 136, 256, 975, 0, 975 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 256, 72, 225, 72, 225, 24, 32, 24, 32, 136, 48, 136, 48, 152, 32, 152, 32, 776, 15, 776, 15, 840, 0, 840, 2, 0, 256, 0 )
+
+[node name="Area2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( -13, 876 )
+target_stage = "res://assets/stages/serious/test_tower2.tscn"
+warp_point = 0
+spectrum = -768
+
+[node name="Area2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 276, 106 )
+target_stage = "res://assets/stages/serious/test_tower4.tscn"
+spectrum = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 1, 0.5 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 0, 128 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+frames = SubResource( 1 )
+frame = 2
+playing = true
+centered = false
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 20, 879 )
+
+[node name="Camera2D" parent="Player" index="8"]
+limit_right = 256
+limit_bottom = 970
+
+[node name="flying_platform" parent="." instance=ExtResource( 8 )]
+position = Vector2( 90, 654 )
+
+[node name="Polygon2D" parent="flying_platform" index="0"]
+visible = false
+
+[node name="AnimationPlayer" parent="flying_platform" index="2"]
+autoplay = "a"
+anims/a = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="flying_platform"]
+position = Vector2( 0, 1 )
+texture = ExtResource( 9 )
+
+[node name="flying_platform2" parent="." instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 112, 905 )
+
+[node name="flying_platform3" parent="." instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 64, 825 )
+
+[node name="flying_platform4" parent="." instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 128, 697 )
+
+[node name="flying_platform5" parent="." instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 128, 121 )
+
+[node name="AnimatedSprite" parent="." instance=ExtResource( 11 )]
+position = Vector2( 160, 163 )
+
+[node name="flying_platform" parent="AnimatedSprite" index="0"]
+direction = -1
+
+[node name="torch3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 40, 121 )
+
+[node name="torch4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 162, 745 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 13 )]
+
+[editable path="Player"]
+
+[editable path="flying_platform"]
+
+[editable path="AnimatedSprite"]
+
+[editable path="AnimatedSprite/flying_platform"]

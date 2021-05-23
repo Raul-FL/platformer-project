@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/merman.js-9f8fcec1f26dc038deb36982a2d33851.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_01.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_02.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_03.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_04.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_05.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_06.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_07.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_08.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_09.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_10.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_11.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_12.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_13.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_14.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_15.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_16.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_17.tres" ]
+
+source_file="res://Sprites/enemies/merman/merman.js"
+dest_files=[ "res://.import/merman.js-9f8fcec1f26dc038deb36982a2d33851.res", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_01.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_02.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_03.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_04.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_05.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_06.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_07.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_08.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_09.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_10.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_11.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_12.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_13.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_14.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_15.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_16.tres", "res://Sprites/enemies/merman/merman.sprites/Sprite-0059_17.tres" ]
+
+[params]
+

@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/circle_horizontal_platform.js-b74d74424b3a4abcf0aa7c83e577c10e.res"
+
+[deps]
+
+files=[ "res://Sprites/Rooms/circle_horizontal_platform.sprites/tower_horizontal_platform_01.tres", "res://Sprites/Rooms/circle_horizontal_platform.sprites/tower_horizontal_platform_02.tres", "res://Sprites/Rooms/circle_horizontal_platform.sprites/tower_horizontal_platform_03.tres" ]
+
+source_file="res://Sprites/Rooms/circle_horizontal_platform.js"
+dest_files=[ "res://.import/circle_horizontal_platform.js-b74d74424b3a4abcf0aa7c83e577c10e.res", "res://Sprites/Rooms/circle_horizontal_platform.sprites/tower_horizontal_platform_01.tres", "res://Sprites/Rooms/circle_horizontal_platform.sprites/tower_horizontal_platform_02.tres", "res://Sprites/Rooms/circle_horizontal_platform.sprites/tower_horizontal_platform_03.tres" ]
+
+[params]
+

@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/stages/Room.gd" type="Script" id=1]
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=3]
+
+
+
+
+
+
+
+
+
+
+[node name="test_slopes" type="Node"]
+script = ExtResource( 1 )
+bound_right = 704
+bound_bottom = 500
+
+[node name="Area2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( -12, 26 )
+scale = Vector2( 1, 0.24 )
+target_stage = "res://Rooms/test_platforms.tscn"
+warp_point = 0
+
+[node name="Area2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 727, 57 )
+scale = Vector2( 1, 0.24 )
+target_stage = "res://Rooms/test_platforms2.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 13, 25 )
+
+[node name="CharacterParams" parent="Player" index="7"]
+base_speed_x = 70
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2( 2.21756, 1.5064 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 51, 19, 51, 19, 114, 34, 114, 34, 160, 66, 182, 91, 182, 120, 168, 148, 163, 175, 150, 209, 150, 226, 163, 244, 169, 264, 182, 288, 171, 288, 127, 304, 127, 304, 59, 321, 59, 320, 240, 0, 240 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 51, 19, 51, 19, 114, 34, 114, 34, 160, 66, 182, 91, 182, 120, 168, 148, 163, 175, 150, 209, 150, 226, 163, 244, 169, 264, 182, 288, 171, 288, 127, 304, 127, 304, 59, 321, 59, 320, 240, 0, 240 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+scale = Vector2( 2.2783, 2.63985 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 320, 0, 320, -7, 0, -7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 0, 0, 320, 0, 320, -7, 0, -7 )
+
+
+[editable path="Player"]

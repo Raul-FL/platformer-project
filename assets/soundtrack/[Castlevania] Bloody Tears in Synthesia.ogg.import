@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/[Castlevania] Bloody Tears in Synthesia.ogg-8bdba2b1a605ed2cc23a4914ab8cc4a5.oggstr"
+
+[deps]
+
+source_file="res://assets/soundtrack/[Castlevania] Bloody Tears in Synthesia.ogg"
+dest_files=[ "res://.import/[Castlevania] Bloody Tears in Synthesia.ogg-8bdba2b1a605ed2cc23a4914ab8cc4a5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

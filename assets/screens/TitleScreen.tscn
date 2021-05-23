@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/HUD/buttonTheme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/fonts/Belmont.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/sfx/Hitting_The_Metal_BellPole.wav" type="AudioStream" id=3]
+[ext_resource path="res://src/stages/TitleScreen.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/Intro/IntroCastle.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/Intro/TitleText.png" type="Texture" id=6]
+[ext_resource path="res://assets/sfx/misc_menu_2.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/soundtrack/Chopin - Fantaisie Impromptu Op. 66 (版本一) 蕭邦即興幻想曲 音樂盒 .ogg" type="AudioStream" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 11
+font_data = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" groups=[
+"TitleScreen",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 30.0
+margin_bottom = 6.0
+texture = ExtResource( 5 )
+expand = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -11.585
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -61.0
+margin_right = 120.0
+margin_bottom = 17.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.686275, 0, 0.870588, 1 )
+margin_left = 83.339
+margin_top = 100.494
+margin_right = 227.339
+margin_bottom = 114.494
+custom_fonts/font = SubResource( 1 )
+text = "Impromptu Fantasie"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.686275, 0, 0.870588, 1 )
+margin_left = 5.0
+margin_top = 194.0
+margin_right = 263.0
+margin_bottom = 208.0
+custom_fonts/font = SubResource( 2 )
+text = "by Raul Lessa. All rights belongs to Konami"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -53.0
+margin_top = -74.0
+margin_right = 53.0
+margin_bottom = -30.0
+
+[node name="start_button" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_right = 106.0
+margin_bottom = 12.0
+focus_neighbour_bottom = NodePath("../Quit")
+theme = ExtResource( 1 )
+text = "START GAME "
+
+[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 16.0
+margin_right = 106.0
+margin_bottom = 28.0
+focus_neighbour_top = NodePath("../start_button")
+theme = ExtResource( 1 )
+text = "QUIT "
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -7.75
+autoplay = true
+
+[node name="menu_start_pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -23.676
+[connection signal="focus_entered" from="CanvasLayer/VBoxContainer/start_button" to="." method="_on_start_button_focus_entered"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/start_button" to="." method="_on_start_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="focus_entered" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_Quit_focus_entered"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_Quit_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="finished" from="menu_start_pressed" to="." method="_on_menu_start_pressed_finished"]

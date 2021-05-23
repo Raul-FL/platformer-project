@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/objects/flying_platform.gd" type="Script" id=1]
+
+
+
+[node name="flying_platform" type="KinematicBody2D" groups=[
+"flying_platforms",
+"flying_moving_platforms",
+]]
+collision_layer = 2
+collision_mask = 0
+motion/sync_to_physics = true
+script = ExtResource( 1 )
+hspeed = 5
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 0, 2 )
+color = Color( 0.231373, 0.00392157, 0.00392157, 1 )
+polygon = PoolVector2Array( -16, -3, 16, -3, 16, -1, -16, -1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -16, -1, 16, -1, 16, 1, -16, 1 )
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+

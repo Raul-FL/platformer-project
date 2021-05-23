@@ -1,0 +1,158 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/sprites/Rooms/engines.sprites/engines1.tres" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/Rooms/engines.sprites/engines2.tres" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/Rooms/engines.sprites/engines3.tres" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/Rooms/tower1.png" type="Texture" id=5]
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/flying_platform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/objects/scenario_utils/Sign.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/objects/scenario_elements/torch3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/HUD/HUD.tscn" type="PackedScene" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[node name="test_tower1" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 1, 0.5 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+frames = SubResource( 1 )
+playing = true
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, 128 )
+frames = SubResource( 1 )
+playing = true
+centered = false
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, 256 )
+frames = SubResource( 1 )
+playing = true
+centered = false
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, 384 )
+frames = SubResource( 1 )
+playing = true
+centered = false
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, 512 )
+frames = SubResource( 1 )
+playing = true
+centered = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 648, 96, 648, 96, 664, 32, 664, 32, 713, 144, 713, 144, 680, 128, 680, 128, 648, 224, 648, 224, 392, 175, 392, 175, 408, 159, 408, 159, 424, 143, 424, 143, 440, 129, 440, 129, 408, 161, 376, 224, 376, 224, 168, 224, 136, 256, 136, 256, 719, 0, 719 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 0, 584, 32, 584, 32, 520, 81, 520, 81, 536, 97, 536, 97, 552, 114, 552, 114, 568, 129, 568, 129, 584, 144, 584, 144, 600, 160, 600, 159, 568, 95, 504, 32, 504, 32, 232, 81, 232, 81, 248, 97, 248, 97, 264, 113, 264, 113, 280, 129, 280, 129, 296, 145, 296, 145, 312, 161, 312, 161, 328, 175, 328, 175, 296, 95, 216, 32, 216, 32, 152, 64, 152, 64, 136, 0, 136 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+polygon = PoolVector2Array( 0, 72, 31, 72, 31, 56, 46, 56, 46, 40, 63, 40, 63, 24, 241, 24, 241, 72, 256, 72, 256, 0, 0, 0 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+polygon = PoolVector2Array( 129, 152, 129, 184, 144, 184, 144, 168, 166, 168, 166, 136, 145, 136 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
+polygon = PoolVector2Array( 31, 72, 31, 136, 0, 136, 0, 72 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ParallaxLayer"]
+
+[node name="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( -12, 624 )
+target_stage = "res://assets/stages/serious/test_room2.tscn"
+warp_point = 0
+spectrum = -407
+
+[node name="Area2D2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 273, 106 )
+target_stage = "res://assets/stages/serious/test_tower2.tscn"
+spectrum = 512
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 27, 616 )
+
+[node name="Camera2D" parent="Player" index="7"]
+limit_right = 256
+limit_bottom = 719
+
+[node name="flying_platform" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 177, 617 )
+
+[node name="flying_platform2" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 184, 345 )
+scale = Vector2( 0.485105, 1 )
+
+[node name="flying_platform3" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 80, 169 )
+scale = Vector2( 0.965103, 1 )
+
+[node name="Sign" parent="." instance=ExtResource( 9 )]
+position = Vector2( 65, 488 )
+
+[node name="Label" parent="Sign/CanvasLayer" index="0"]
+visible = false
+margin_left = 15.0
+margin_right = 239.0
+text = "Pressione Espaco no ar para 
+pular mais uma vez"
+
+[node name="torch3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 82, 633 )
+
+[node name="torch4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 214, 633 )
+
+[node name="torch3" parent="torch4" instance=ExtResource( 10 )]
+position = Vector2( -174, -144 )
+
+[node name="torch3" parent="torch4/torch3" instance=ExtResource( 10 )]
+position = Vector2( 175, -128 )
+
+[node name="torch3" parent="torch4/torch3/torch3" instance=ExtResource( 10 )]
+position = Vector2( -175, -160 )
+
+[node name="torch4" parent="torch4/torch3/torch3" instance=ExtResource( 10 )]
+position = Vector2( -176, -240 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 11 )]
+[connection signal="body_entered" from="Sign" to="Sign" method="_on_Sign_body_entered"]
+[connection signal="body_exited" from="Sign" to="Sign" method="_on_Sign_body_exited"]
+
+[editable path="Player"]
+
+[editable path="Sign"]

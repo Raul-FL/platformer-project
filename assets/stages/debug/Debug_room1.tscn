@@ -1,0 +1,172 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/circle_vertical_platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/flying_moving_platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/flying_platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/objects/scenario_elements/wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/objects/actors/enemies/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/actors/player/state_machine.gd" type="Script" id=7]
+[ext_resource path="res://assets/HUD/HUD.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "down_up"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1036, 235 ), Vector2( 1036, 177 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1036, 235 ), Vector2( 1120, 235 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "more_directions"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1036, 235 ), Vector2( 1132, 235 ), Vector2( 1132, 138 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "more_directions_reverse"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1036, 235 ), Vector2( 1132, 138 ), Vector2( 1132, 235 ) ]
+}
+
+[node name="Node" type="Node"]
+
+[node name="circle_vertical_platform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 903, 132 )
+direction = -1
+
+[node name="flying_platform3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1084, 235 )
+scale = Vector2( 1.56, 1 )
+
+[node name="AnimationPlayer" parent="flying_platform3" index="2"]
+autoplay = "more_directions_reverse"
+anims/down_up = SubResource( 1 )
+anims/left_to_right = SubResource( 2 )
+anims/more_directions = SubResource( 3 )
+anims/more_directions_reverse = SubResource( 4 )
+
+[node name="flying_platform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 879, 271 )
+scale = Vector2( 3.96, 1 )
+
+[node name="flying_platform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 884, 253 )
+scale = Vector2( 3.96, 1 )
+
+[node name="flying_platform4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 888, 382 )
+scale = Vector2( 1.92, 1 )
+direction = -1
+hspeed = 10
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 221, 83, 221, 83, 302, 129, 332, 200, 351, 276, 359, 372, 359, 449, 353, 512, 339, 542, 315, 571, 315, 648, 349, 705, 312, 705, 243, 800, 243, 800, 436, 0, 436 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 221, 83, 221, 83, 302, 129, 332, 200, 351, 276, 359, 372, 359, 449, 353, 512, 339, 542, 315, 571, 315, 648, 349, 705, 312, 705, 246, 701, 244, 701, 243, 800, 243, 800, 436, 0, 436 )
+
+[node name="wall" parent="." instance=ExtResource( 4 )]
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 781, 220 )
+collision/safe_margin = 0.016
+START_STATE = NodePath("../Player/states/idle")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( -86, 553 )
+scale = Vector2( 3.16, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D3"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 41, 54, 41, 97, 239, 97, 239, 54 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+polygon = PoolVector2Array( 41, 54, 41, 97, 239, 97, 239, 54 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 440, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D4"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 41, 54, 41, 97, 239, 97, 239, 54 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+polygon = PoolVector2Array( 41, 54, 41, 97, 239, 97, 239, 54 )
+
+[node name="Character2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 204, 584 )
+script = ExtResource( 7 )
+START_STATE = NodePath("states/idle")
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 8 )]
+
+[editable path="circle_vertical_platform"]
+
+[editable path="flying_platform3"]
+
+[editable path="Player"]
+
+[editable path="Character2"]
+
+[editable path="Character2/states"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/legion.js-588c15d64493c05984f3985f112d6f97.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/legion/legion.sprites/Sprite-0112_01.tres", "res://Sprites/enemies/legion/legion.sprites/Sprite-0112_02.tres", "res://Sprites/enemies/legion/legion.sprites/Sprite-0112_03.tres" ]
+
+source_file="res://Sprites/enemies/legion/legion.js"
+dest_files=[ "res://.import/legion.js-588c15d64493c05984f3985f112d6f97.res", "res://Sprites/enemies/legion/legion.sprites/Sprite-0112_01.tres", "res://Sprites/enemies/legion/legion.sprites/Sprite-0112_02.tres", "res://Sprites/enemies/legion/legion.sprites/Sprite-0112_03.tres" ]
+
+[params]
+

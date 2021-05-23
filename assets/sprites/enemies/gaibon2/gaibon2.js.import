@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/gaibon2.js-62c155f8786325e4682faca944093a15.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_01.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_02.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_03.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_04.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_05.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_06.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_07.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_08.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_09.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_10.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_11.tres" ]
+
+source_file="res://Sprites/enemies/gaibon2/gaibon2.js"
+dest_files=[ "res://.import/gaibon2.js-62c155f8786325e4682faca944093a15.res", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_01.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_02.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_03.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_04.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_05.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_06.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_07.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_08.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_09.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_10.tres", "res://Sprites/enemies/gaibon2/gaibon2.sprites/gaibon2_11.tres" ]
+
+[params]
+

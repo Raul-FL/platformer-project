@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/stages/Room.gd" type="Script" id=1]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/objects/actors/enemies/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/HUD/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/HUD/HUD.gd" type="Script" id=6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[node name="test_room1" type="Node"]
+script = ExtResource( 1 )
+bound_right = 340
+bound_bottom = 240
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+editor/display_folded = true
+position = Vector2( 46, 177 )
+
+[node name="Character2" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 174, 193 )
+START_STATE = NodePath("states/idle")
+
+[node name="CharacterStats" parent="Character2" index="22"]
+hp = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 320, 0, 320, 23, 26, 23, 26, 216, 340, 216, 340, 240, 0, 240 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 0, 320, 0, 320, 23, 26, 23, 26, 216, 340, 216, 340, 240, 0, 240 )
+
+[node name="Area2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 353, 118 )
+target_stage = "res://Rooms/test_platforms.tscn"
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
+script = ExtResource( 6 )
+
+[node name="LifeBar" parent="CanvasLayer/MarginContainer" index="0"]
+max_value = 16.0
+value = 16.0
+
+
+[editable path="Player"]
+
+[editable path="Player/states"]
+
+[editable path="Character2"]
+
+[editable path="Character2/states"]
+
+[editable path="CanvasLayer"]

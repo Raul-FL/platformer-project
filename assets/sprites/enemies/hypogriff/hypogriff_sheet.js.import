@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/hypogriff_sheet.js-dcb5bac7e57980499c68e56e4c1128f5.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_01.tres", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_02.tres", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_03.tres", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_sfx0.tres", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_sfx1.tres", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_sfx2.tres" ]
+
+source_file="res://Sprites/enemies/hypogriff/hypogriff_sheet.js"
+dest_files=[ "res://.import/hypogriff_sheet.js-dcb5bac7e57980499c68e56e4c1128f5.res", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_01.tres", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_02.tres", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_03.tres", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_sfx0.tres", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_sfx1.tres", "res://Sprites/enemies/hypogriff/hypogriff_sheet.sprites/hypogriff_sfx2.tres" ]
+
+[params]
+

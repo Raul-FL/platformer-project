@@ -1,0 +1,748 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/sprites/Rooms/last_room - test_dash.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/Rooms/last_room - test_dash_left.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/Rooms/blue_moon.png" type="Texture" id=4]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/objects/scenario_elements/water_area11.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/flying_moving_platform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sprites/enviroment/horizontal_moving_platform.png" type="Texture" id=8]
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/objects/scenario_utils/Sign.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/objects/scenario_elements/torch3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/stages/serious/Area2D3.gd" type="Script" id=12]
+[ext_resource path="res://assets/HUD/HUD.tscn" type="PackedScene" id=13]
+
+[sub_resource type="Animation" id=1]
+resource_name = "left_to_right"
+length = 60.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 29.2, 32.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1630, 111 ), Vector2( 1630, 111 ), Vector2( 3124, 111 ), Vector2( 3124, 111 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1576, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13, 17 )
+
+[node name="test_dash" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = 3.0
+margin_right = 569.0
+margin_bottom = 240.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+margin_left = 3180.0
+margin_top = 3.0
+margin_right = 3749.0
+margin_bottom = 240.0
+texture = ExtResource( 2 )
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 1017.0
+margin_top = 3.0
+margin_right = 1586.0
+margin_bottom = 240.0
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 128, 569, 128, 569, 239, 0, 240 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+position = Vector2( 0, -240 )
+polygon = PoolVector2Array( -2, 223, 3752, 226, 3752, 240, 0, 240 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2( 1017, 0 )
+polygon = PoolVector2Array( 1, 128, 569, 128, 569, 239, 0, 240 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 260, -1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+position = Vector2( 2919, 1 )
+polygon = PoolVector2Array( 1, 128, 569, 128, 569, 239, 0, 240 )
+
+[node name="ParallaxLayer" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.025, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxLayer"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer/ParallaxLayer"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1553, 99 )
+
+[node name="Camera2D" parent="Player" index="7"]
+limit_right = 3747
+limit_bottom = 207
+
+[node name="water_areas" type="Node2D" parent="."]
+
+[node name="water_area11" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1978, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area11" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area11" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area11" index="2"]
+frame = 3
+
+[node name="water_area12" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1882, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area12" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area12" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area12" index="2"]
+frame = 3
+
+[node name="water_area13" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1786, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area13" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area13" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area13" index="2"]
+frame = 3
+
+[node name="water_area14" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1690, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area14" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area14" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area14" index="2"]
+frame = 3
+
+[node name="water_area15" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1594, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area15" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area15" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area15" index="2"]
+frame = 3
+
+[node name="water_area16" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1498, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area16" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area16" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area16" index="2"]
+frame = 3
+
+[node name="water_area17" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1403, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area17" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area17" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area17" index="2"]
+frame = 3
+
+[node name="water_area18" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1307, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area18" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area18" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area18" index="2"]
+frame = 3
+
+[node name="water_area19" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1211, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area19" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area19" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area19" index="2"]
+frame = 3
+
+[node name="water_area20" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1115, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area20" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area20" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area20" index="2"]
+frame = 3
+
+[node name="water_area21" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -1019, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area21" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area21" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area21" index="2"]
+frame = 3
+
+[node name="water_area22" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -923, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area22" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area22" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area22" index="2"]
+frame = 3
+
+[node name="water_area23" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -827, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area23" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area23" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area23" index="2"]
+frame = 3
+
+[node name="water_area24" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -731, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area24" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area24" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area24" index="2"]
+frame = 3
+
+[node name="water_area25" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -635, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area25" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area25" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area25" index="2"]
+frame = 3
+
+[node name="water_area26" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -539, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area26" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area26" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area26" index="2"]
+frame = 3
+
+[node name="water_area27" parent="water_areas" instance=ExtResource( 6 )]
+position = Vector2( -443, -92 )
+
+[node name="AnimatedSprite" parent="water_areas/water_area27" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas/water_area27" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas/water_area27" index="2"]
+frame = 3
+
+[node name="water_areas2" type="Node2D" parent="."]
+position = Vector2( 1631, 0 )
+
+[node name="water_area11" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1978, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area11" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area11" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area11" index="2"]
+frame = 0
+
+[node name="water_area12" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1882, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area12" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area12" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area12" index="2"]
+frame = 0
+
+[node name="water_area13" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1786, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area13" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area13" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area13" index="2"]
+frame = 0
+
+[node name="water_area14" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1690, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area14" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area14" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area14" index="2"]
+frame = 0
+
+[node name="water_area15" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1594, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area15" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area15" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area15" index="2"]
+frame = 0
+
+[node name="water_area16" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1498, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area16" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area16" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area16" index="2"]
+frame = 0
+
+[node name="water_area17" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1403, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area17" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area17" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area17" index="2"]
+frame = 0
+
+[node name="water_area18" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1307, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area18" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area18" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area18" index="2"]
+frame = 0
+
+[node name="water_area19" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1211, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area19" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area19" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area19" index="2"]
+frame = 0
+
+[node name="water_area20" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1115, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area20" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area20" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area20" index="2"]
+frame = 0
+
+[node name="water_area21" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -1019, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area21" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area21" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area21" index="2"]
+frame = 0
+
+[node name="water_area22" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -923, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area22" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area22" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area22" index="2"]
+frame = 0
+
+[node name="water_area23" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -827, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area23" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area23" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area23" index="2"]
+frame = 0
+
+[node name="water_area24" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -731, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area24" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area24" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area24" index="2"]
+frame = 0
+
+[node name="water_area25" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -635, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area25" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area25" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area25" index="2"]
+frame = 0
+
+[node name="water_area26" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -539, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area26" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area26" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area26" index="2"]
+frame = 0
+
+[node name="water_area27" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -443, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area27" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area27" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area27" index="2"]
+frame = 0
+
+[node name="water_area28" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -347, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area28" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area28" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area28" index="2"]
+frame = 0
+
+[node name="water_area29" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -251, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area29" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area29" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area29" index="2"]
+frame = 0
+
+[node name="water_area30" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -155, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area30" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area30" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area30" index="2"]
+frame = 0
+
+[node name="water_area31" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( -59, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area31" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area31" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area31" index="2"]
+frame = 0
+
+[node name="water_area32" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( 37, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area32" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area32" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area32" index="2"]
+frame = 0
+
+[node name="water_area33" parent="water_areas2" instance=ExtResource( 6 )]
+position = Vector2( 133, -92 )
+
+[node name="AnimatedSprite" parent="water_areas2/water_area33" index="0"]
+frame = 17
+
+[node name="AnimatedSprite2" parent="water_areas2/water_area33" index="1"]
+frame = 21
+
+[node name="AnimatedSprite3" parent="water_areas2/water_area33" index="2"]
+frame = 0
+
+[node name="flying_platform" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1630, 111 )
+
+[node name="Polygon2D" parent="flying_platform" index="0"]
+visible = false
+
+[node name="AnimationPlayer" parent="flying_platform" index="2"]
+autoplay = "left_to_right"
+anims/left_to_right = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="flying_platform"]
+texture = ExtResource( 8 )
+
+[node name="Area2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( -14, 154 )
+target_stage = "res://assets/stages/serious/test_tower4.tscn"
+warp_point = 0
+spectrum = 57
+
+[node name="Area2D2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3765, 74 )
+target_stage = "res://assets/stages/serious/test_room_boss.tscn"
+spectrum = 71
+
+[node name="Sign" parent="." instance=ExtResource( 10 )]
+position = Vector2( 517, 112 )
+
+[node name="Label" parent="Sign/CanvasLayer" index="0"]
+visible = false
+margin_left = 7.0
+margin_top = 54.0
+margin_right = 239.0
+margin_bottom = 81.0
+text = "Segure Shift e aperte Espaco
+para efetuar um pulo rapido"
+
+[node name="torch3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 305, 113 )
+
+[node name="torch4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 379, 113 )
+
+[node name="torch3" parent="torch4" instance=ExtResource( 11 )]
+position = Vector2( 950, 0 )
+
+[node name="torch4" parent="torch4" instance=ExtResource( 11 )]
+position = Vector2( 1028, 0 )
+
+[node name="torch3" parent="torch4/torch4" instance=ExtResource( 11 )]
+position = Vector2( 2076, 0 )
+
+[node name="torch4" parent="torch4/torch4" instance=ExtResource( 11 )]
+position = Vector2( 2151, 0 )
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2( 2082, 272 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2( -16, 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+shape = SubResource( 3 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 13 )]
+[connection signal="body_entered" from="Sign" to="Sign" method="_on_Sign_body_entered"]
+[connection signal="body_exited" from="Sign" to="Sign" method="_on_Sign_body_exited"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_Area2D3_body_entered"]
+
+[editable path="Player"]
+
+[editable path="water_areas/water_area11"]
+
+[editable path="water_areas/water_area12"]
+
+[editable path="water_areas/water_area13"]
+
+[editable path="water_areas/water_area14"]
+
+[editable path="water_areas/water_area15"]
+
+[editable path="water_areas/water_area16"]
+
+[editable path="water_areas/water_area17"]
+
+[editable path="water_areas/water_area18"]
+
+[editable path="water_areas/water_area19"]
+
+[editable path="water_areas/water_area20"]
+
+[editable path="water_areas/water_area21"]
+
+[editable path="water_areas/water_area22"]
+
+[editable path="water_areas/water_area23"]
+
+[editable path="water_areas/water_area24"]
+
+[editable path="water_areas/water_area25"]
+
+[editable path="water_areas/water_area26"]
+
+[editable path="water_areas/water_area27"]
+
+[editable path="water_areas2/water_area11"]
+
+[editable path="water_areas2/water_area12"]
+
+[editable path="water_areas2/water_area13"]
+
+[editable path="water_areas2/water_area14"]
+
+[editable path="water_areas2/water_area15"]
+
+[editable path="water_areas2/water_area16"]
+
+[editable path="water_areas2/water_area17"]
+
+[editable path="water_areas2/water_area18"]
+
+[editable path="water_areas2/water_area19"]
+
+[editable path="water_areas2/water_area20"]
+
+[editable path="water_areas2/water_area21"]
+
+[editable path="water_areas2/water_area22"]
+
+[editable path="water_areas2/water_area23"]
+
+[editable path="water_areas2/water_area24"]
+
+[editable path="water_areas2/water_area25"]
+
+[editable path="water_areas2/water_area26"]
+
+[editable path="water_areas2/water_area27"]
+
+[editable path="water_areas2/water_area28"]
+
+[editable path="water_areas2/water_area29"]
+
+[editable path="water_areas2/water_area30"]
+
+[editable path="water_areas2/water_area31"]
+
+[editable path="water_areas2/water_area32"]
+
+[editable path="water_areas2/water_area33"]
+
+[editable path="flying_platform"]
+
+[editable path="Sign"]

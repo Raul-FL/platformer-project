@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/sprites/Rooms/circle_horizontal_platform.sprites/tower_horizontal_platform_01.tres" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/Rooms/circle_horizontal_platform.sprites/tower_horizontal_platform_02.tres" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/Rooms/circle_horizontal_platform.sprites/tower_horizontal_platform_03.tres" type="Texture" id=3]
+[ext_resource path="res://assets/objects/scenario_utils/moving_platforms/flying_moving_platform.tscn" type="PackedScene" id=4]
+
+
+
+
+
+
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+position = Vector2( 177, 92 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="flying_platform" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 0, -6 )
+scale = Vector2( 1.92, 1 )
+

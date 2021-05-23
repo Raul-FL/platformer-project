@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/water.js-699f95f129df16b56f3c3a031a3b9afa.res"
+
+[deps]
+
+files=[ "res://Objects/water.sprites/Sprite-00012_01.tres", "res://Objects/water.sprites/Sprite-00012_02.tres", "res://Objects/water.sprites/Sprite-00012_03.tres", "res://Objects/water.sprites/Sprite-00012_04.tres" ]
+
+source_file="res://Objects/water.js"
+dest_files=[ "res://.import/water.js-699f95f129df16b56f3c3a031a3b9afa.res", "res://Objects/water.sprites/Sprite-00012_01.tres", "res://Objects/water.sprites/Sprite-00012_02.tres", "res://Objects/water.sprites/Sprite-00012_03.tres", "res://Objects/water.sprites/Sprite-00012_04.tres" ]
+
+[params]
+

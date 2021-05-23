@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprites/Rooms/enemy room.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/Rooms/parallax_chapel.png" type="Texture" id=4]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/objects/scenario_utils/Sign.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/objects/scenario_elements/torch3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/objects/actors/enemies/Dulhahan/Dulhahan.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/actors/enemies/Dulhahan/state_machine_dulhahan.gd" type="Script" id=9]
+[ext_resource path="res://assets/HUD/HUD.tscn" type="PackedScene" id=10]
+
+[node name="Node" type="Node2D"]
+
+[node name="Area2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9, 418 )
+target_stage = "res://assets/stages/serious/test_room1.tscn"
+warp_point = 0
+spectrum = -241
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2( -7, 0 )
+
+[node name="Area2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 526, 419 )
+target_stage = "res://assets/stages/serious/test_room2.tscn"
+spectrum = -175
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 514.0
+margin_bottom = 481.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 481, 0, 440, 30, 440, 30, 465, 484, 465, 484, 451, 514, 451, 514, 481 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 0, 327, 32, 327, 32, 16, 482, 16, 482, 385, 514, 385, 514, 0, 0, 0 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.5, 0.5 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 2, -359 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 18, 417 )
+START_STATE = NodePath("states/idle")
+
+[node name="CharacterParams" parent="Player" index="5"]
+air_jumps = -1
+air_dashes = -1
+
+[node name="Camera2D" parent="Player" index="7"]
+limit_right = 513
+limit_bottom = 481
+
+[node name="Sign" parent="." instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 74, 449 )
+
+[node name="Sprite" parent="Sign" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Sign" index="1"]
+visible = false
+
+[node name="Label" parent="Sign/CanvasLayer" index="0"]
+visible = false
+margin_left = 14.0
+margin_right = 230.0
+text = "Segure ^ e pressione Z para
+utilizar arma secundaria"
+
+[node name="torch3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 121, 450 )
+
+[node name="torch4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 293, 449 )
+
+[node name="torch5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 471, 449 )
+
+[node name="Dulhahan" parent="." instance=ExtResource( 8 )]
+position = Vector2( 211, 442 )
+script = ExtResource( 9 )
+
+[node name="CharacterParams" parent="Dulhahan" index="6"]
+base_speed_x = 40
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 10 )]
+
+[editable path="Area2D"]
+
+[editable path="Player"]
+
+[editable path="Player/states"]
+
+[editable path="Sign"]
+
+[editable path="Dulhahan"]
+
+[editable path="Dulhahan/states"]

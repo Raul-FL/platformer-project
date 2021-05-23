@@ -1,0 +1,1 @@
+Sprite-0113_01.png.png 2 2, Sprite-0113_02.png.png 30 15, Sprite-0113_03.png.png 60 11.

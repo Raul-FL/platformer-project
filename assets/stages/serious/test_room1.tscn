@@ -1,0 +1,177 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/objects/scenario_utils/room_bound.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/sprites/Rooms/Sprite-0001.png" type="Texture" id=2]
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sprites/water.sprites/Sprite-00012_02.tres" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/water.sprites/Sprite-00012_03.tres" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/water.sprites/Sprite-00012_04.tres" type="Texture" id=6]
+[ext_resource path="res://assets/objects/scenario_elements/torch.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/HUD/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sprites/Rooms/entrance_parallax.png" type="Texture" id=10]
+[ext_resource path="res://assets/objects/scenario_utils/Sign.tscn" type="PackedScene" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 17, 37 )
+
+[node name="test_room1" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = 2.0
+margin_right = 1023.0
+margin_bottom = 225.0
+rect_scale = Vector2( 1, 1.08 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, 3 )
+scale = Vector2( 1, 1.08 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 182.407, 0, 193.519, 877, 193.519, 877, 182.407 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 107, -33 )
+scale = Vector2( 1, 1.08 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+polygon = PoolVector2Array( 830, 227.778, 830, 215.741, 912, 215.741, 912, 227.778 )
+
+[node name="Area2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1027, 110 )
+scale = Vector2( 1, 1.08 )
+target_stage = "res://assets/stages/serious/chapel.tscn"
+spectrum = 241
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 3, -209 )
+scale = Vector2( 1, 1.08 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 0, 185.185, 0, 193.519, 1019, 192.593, 1019, 185.185 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 8, -209 )
+scale = Vector2( 1, 1.08 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+polygon = PoolVector2Array( -15, 195.37, -15, 377.778, -23, 376.852, -24, 197.222 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 948, 236 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="torch2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 702, 6 )
+
+[node name="torch3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 840, 6 )
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 24, 164 )
+
+[node name="Camera2D" parent="Player" index="7"]
+limit_right = 1017
+limit_bottom = 241
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 9 )]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 1 )
+motion_mirroring = Vector2( 576, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, -3 )
+scale = Vector2( 1, 1.08482 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2( 1007, 37 )
+shape = SubResource( 2 )
+
+[node name="Sign" parent="." instance=ExtResource( 11 )]
+
+[node name="Label" parent="Sign/CanvasLayer" index="0"]
+visible = false
+
+[node name="Sign2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 356, 184 )
+
+[node name="Label" parent="Sign2/CanvasLayer" index="0"]
+visible = false
+text = "Pressione Shift para 
+efetuar um dash"
+
+[node name="Sign3" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 606, 185 )
+
+[node name="Sprite" parent="Sign3" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Sign3" index="1"]
+visible = false
+
+[node name="Label" parent="Sign3/CanvasLayer" index="0"]
+visible = false
+text = "Pressione Z para 
+atacar"
+
+[node name="Sign4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 871, 184 )
+
+[node name="Label" parent="Sign4/CanvasLayer" index="0"]
+visible = false
+text = "Pressione Espaco para 
+pular"
+
+[node name="room_bound" parent="." instance=ExtResource( 1 )]
+
+[node name="room_bound2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 137.5 )
+[connection signal="body_entered" from="Sign" to="Sign" method="_on_Sign_body_entered"]
+[connection signal="body_exited" from="Sign" to="Sign" method="_on_Sign_body_exited"]
+[connection signal="body_entered" from="Sign2" to="Sign2" method="_on_Sign_body_entered"]
+[connection signal="body_exited" from="Sign2" to="Sign2" method="_on_Sign_body_exited"]
+[connection signal="body_entered" from="Sign4" to="Sign4" method="_on_Sign_body_entered"]
+[connection signal="body_exited" from="Sign4" to="Sign4" method="_on_Sign_body_exited"]
+
+[editable path="Player"]
+
+[editable path="CanvasLayer"]
+
+[editable path="Sign"]
+
+[editable path="Sign2"]
+
+[editable path="Sign3"]
+
+[editable path="Sign4"]

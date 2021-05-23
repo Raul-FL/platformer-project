@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/misc_menu_2.wav-64cca34d28a0ea36d5ece2e7ad1d88b4.sample"
+
+[deps]
+
+source_file="res://assets/sfx/misc_menu_2.wav"
+dest_files=[ "res://.import/misc_menu_2.wav-64cca34d28a0ea36d5ece2e7ad1d88b4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

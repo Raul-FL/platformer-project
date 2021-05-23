@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Fantasie Impromptu.ogg-373d2f39a8db4c6111a545e59c44b88a.oggstr"
+
+[deps]
+
+source_file="res://assets/soundtrack/Fantasie Impromptu.ogg"
+dest_files=[ "res://.import/Fantasie Impromptu.ogg-373d2f39a8db4c6111a545e59c44b88a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

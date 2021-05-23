@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/walter.js-1fc16cc1a62f2c1cf02ec4ce376bb2be.res"
+
+[deps]
+
+files=[ "res://Sprites/enemies/walter/walter.sprites/walter1.tres", "res://Sprites/enemies/walter/walter.sprites/walter10.tres", "res://Sprites/enemies/walter/walter.sprites/walter11.tres", "res://Sprites/enemies/walter/walter.sprites/walter12.tres", "res://Sprites/enemies/walter/walter.sprites/walter13.tres", "res://Sprites/enemies/walter/walter.sprites/walter14.tres", "res://Sprites/enemies/walter/walter.sprites/walter15.tres", "res://Sprites/enemies/walter/walter.sprites/walter16.tres", "res://Sprites/enemies/walter/walter.sprites/walter17.tres", "res://Sprites/enemies/walter/walter.sprites/walter18.tres", "res://Sprites/enemies/walter/walter.sprites/walter19.tres", "res://Sprites/enemies/walter/walter.sprites/walter2.tres", "res://Sprites/enemies/walter/walter.sprites/walter20.tres", "res://Sprites/enemies/walter/walter.sprites/walter21.tres", "res://Sprites/enemies/walter/walter.sprites/walter22.tres", "res://Sprites/enemies/walter/walter.sprites/walter23.tres", "res://Sprites/enemies/walter/walter.sprites/walter3.tres", "res://Sprites/enemies/walter/walter.sprites/walter4.tres", "res://Sprites/enemies/walter/walter.sprites/walter5.tres", "res://Sprites/enemies/walter/walter.sprites/walter6.tres", "res://Sprites/enemies/walter/walter.sprites/walter7.tres", "res://Sprites/enemies/walter/walter.sprites/walter8.tres", "res://Sprites/enemies/walter/walter.sprites/walter9.tres" ]
+
+source_file="res://Sprites/enemies/walter/walter.js"
+dest_files=[ "res://.import/walter.js-1fc16cc1a62f2c1cf02ec4ce376bb2be.res", "res://Sprites/enemies/walter/walter.sprites/walter1.tres", "res://Sprites/enemies/walter/walter.sprites/walter10.tres", "res://Sprites/enemies/walter/walter.sprites/walter11.tres", "res://Sprites/enemies/walter/walter.sprites/walter12.tres", "res://Sprites/enemies/walter/walter.sprites/walter13.tres", "res://Sprites/enemies/walter/walter.sprites/walter14.tres", "res://Sprites/enemies/walter/walter.sprites/walter15.tres", "res://Sprites/enemies/walter/walter.sprites/walter16.tres", "res://Sprites/enemies/walter/walter.sprites/walter17.tres", "res://Sprites/enemies/walter/walter.sprites/walter18.tres", "res://Sprites/enemies/walter/walter.sprites/walter19.tres", "res://Sprites/enemies/walter/walter.sprites/walter2.tres", "res://Sprites/enemies/walter/walter.sprites/walter20.tres", "res://Sprites/enemies/walter/walter.sprites/walter21.tres", "res://Sprites/enemies/walter/walter.sprites/walter22.tres", "res://Sprites/enemies/walter/walter.sprites/walter23.tres", "res://Sprites/enemies/walter/walter.sprites/walter3.tres", "res://Sprites/enemies/walter/walter.sprites/walter4.tres", "res://Sprites/enemies/walter/walter.sprites/walter5.tres", "res://Sprites/enemies/walter/walter.sprites/walter6.tres", "res://Sprites/enemies/walter/walter.sprites/walter7.tres", "res://Sprites/enemies/walter/walter.sprites/walter8.tres", "res://Sprites/enemies/walter/walter.sprites/walter9.tres" ]
+
+[params]
+

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Chopin - Nocturne op.9 No.2.ogg-6e62643791541cf26ca9455d73e9db9b.oggstr"
+
+[deps]
+
+source_file="res://assets/soundtrack/Chopin - Nocturne op.9 No.2.ogg"
+dest_files=[ "res://.import/Chopin - Nocturne op.9 No.2.ogg-6e62643791541cf26ca9455d73e9db9b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

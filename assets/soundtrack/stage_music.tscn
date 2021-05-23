@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/soundtrack/[Castlevania] Bloody Tears in Synthesia.ogg" type="AudioStream" id=1]
+[ext_resource path="res://src/sfx/stage_music.gd" type="Script" id=2]
+
+
+
+
+
+
+
+
+[node name="stage_music" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+script = ExtResource( 2 )

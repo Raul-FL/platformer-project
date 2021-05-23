@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/sprites/Rooms/tower4.png" type="Texture" id=2]
+[ext_resource path="res://assets/stages/change_scene_area.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sprites/Rooms/second_parallax_background.png" type="Texture" id=4]
+[ext_resource path="res://assets/objects/actors/player/Character.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/objects/scenario_utils/Sign.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/objects/scenario_elements/torch3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/HUD/HUD.tscn" type="PackedScene" id=8]
+
+[node name="test_tower4" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 136, 58, 136, 107, 184, 246, 184, 343, 88, 426, 88, 451, 113, 451, 136, 434, 136, 417, 120, 400, 120, 400, 184, 494, 184, 494, 165, 502, 165, 522, 184, 768, 184, 768, 207, 0, 207 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 0, 72, 32, 72, 32, 8, 192, 8, 192, 72, 163, 72, 163, 104, 252, 104, 252, 72, 224, 72, 224, 8, 585, 8, 585, 123, 574, 124, 574, 154, 662, 154, 663, 123, 617, 123, 617, 8, 736, 8, 736, 72, 768, 72, 768, 0, 0, 0 )
+
+[node name="Area2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( -13, 109 )
+target_stage = "res://assets/stages/serious/test_tower3.tscn"
+warp_point = 0
+
+[node name="Area2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 786, 131 )
+target_stage = "res://assets/stages/serious/test_dash.tscn"
+spectrum = -57
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2( 0.25, 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 21, 108 )
+
+[node name="Camera2D" parent="Player" index="8"]
+limit_right = 768
+limit_bottom = 207
+
+[node name="Sign" parent="." instance=ExtResource( 6 )]
+position = Vector2( 546, 168 )
+
+[node name="Label" parent="Sign/CanvasLayer" index="0"]
+visible = false
+margin_left = 14.0
+margin_right = 206.0
+text = "Pressione baixo + Shift para
+deslizar"
+
+[node name="torch3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 54, 131 )
+
+[node name="torch4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 184, 177 )
+
+[node name="torch5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 388, 80 )
+
+[node name="torch6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 738, 169 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 8 )]
+[connection signal="body_entered" from="Sign" to="Sign" method="_on_Sign_body_entered"]
+[connection signal="body_exited" from="Sign" to="Sign" method="_on_Sign_body_exited"]
+
+[editable path="Area2D"]
+
+[editable path="Player"]
+
+[editable path="Sign"]

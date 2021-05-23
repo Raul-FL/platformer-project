@@ -1,0 +1,15 @@
+[remap]
+
+importer="pixijs_import_spritesheet"
+type="Resource"
+path="res://.import/torch3.js-ae6790b8a7e3b62314eef6977d524a1f.res"
+
+[deps]
+
+files=[ "res://Sprites/enviroment/torch3.sprites/torch0.tres", "res://Sprites/enviroment/torch3.sprites/torch1.tres", "res://Sprites/enviroment/torch3.sprites/torch2.tres", "res://Sprites/enviroment/torch3.sprites/torch3.tres", "res://Sprites/enviroment/torch3.sprites/torch4.tres", "res://Sprites/enviroment/torch3.sprites/torch5.tres", "res://Sprites/enviroment/torch3.sprites/torch6.tres", "res://Sprites/enviroment/torch3.sprites/torch7.tres" ]
+
+source_file="res://Sprites/enviroment/torch3.js"
+dest_files=[ "res://.import/torch3.js-ae6790b8a7e3b62314eef6977d524a1f.res", "res://Sprites/enviroment/torch3.sprites/torch0.tres", "res://Sprites/enviroment/torch3.sprites/torch1.tres", "res://Sprites/enviroment/torch3.sprites/torch2.tres", "res://Sprites/enviroment/torch3.sprites/torch3.tres", "res://Sprites/enviroment/torch3.sprites/torch4.tres", "res://Sprites/enviroment/torch3.sprites/torch5.tres", "res://Sprites/enviroment/torch3.sprites/torch6.tres", "res://Sprites/enviroment/torch3.sprites/torch7.tres" ]
+
+[params]
+
